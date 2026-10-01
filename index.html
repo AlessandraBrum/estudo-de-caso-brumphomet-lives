@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Brumphomet — Estudo de caso | Alessandra Brum</title>
+  <meta name="description"
+    content="Estudo de caso de UX/UI: construção da identidade e do overlay do canal de lives Brumphomet, da Twitch, do zero à monetização.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="assets/img/logobrumphometlives.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <!-- Navegação: barra fixa no topo (sticky) no desktop E no celular.
+       Desktop: links na barra horizontal. Celular: botão ☰ que abre um painel
+       logo abaixo da barra (rola por dentro se a lista não couber na tela). -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">
+        <span class="brand-kicker">Estudo de caso</span>
+        <span class="brand-name" translate="no">Alessandra Brum</span>
+      </a>
+      <div class="lang-switch" role="group" aria-label="Idioma / Language / Sprache" translate="no">
+        <button type="button" data-lang="pt" lang="pt" aria-pressed="true">PT</button>
+        <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="de" lang="de" aria-pressed="false">DE</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" aria-label="Seções da página" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#visao-geral">Visão geral</a>
+        <a href="#identidade">Identidade</a>
+        <a href="#do-zero">Do zero</a>
+        <a href="#apelo-emocional">Emocional</a>
+        <a href="#configuracoes">Configurações</a>
+        <a href="#retorno">Retorno</a>
+        <a href="#interatividade">Interatividade</a>
+        <a href="#videos">Vídeos</a>
+        <a href="#aprendizados">Aprendizados</a>
+      </nav>
+    </div>
+  </header>
+  <div class="nav-scrim" id="navScrim"></div>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="wrap">
+        <p class="eyebrow reveal">Projeto de UX/UI</p>
+
+        <div class="hero-logo reveal"><img src="assets/img/logocommorcegos1.png"
+            alt="Logotipo Brumphomet, em lettering gótico com morcegos"></div>
+        <h1 class="reveal">Transmissões ao vivo</h1>
+        <p class="hero-lead reveal">Do zero à monetização: a construção de uma comunidade em transmissões ao vivo na
+          Twitch.</p>
+        <div class="hero-meta reveal">
+          <div><span>Campo de estudo</span><strong>UX/UI Design</strong></div>
+          <div><span>Projeto</span><strong>Estudo de caso</strong></div>
+          <div><span>Foco</span><strong>Identidade visual, overlay e integração de ferramentas</strong></div>
+        </div>
+      </div>
+    </section>
+    <div class="section-end-sentinel"></div>
+
+    <!-- Visão geral -->
+    <section id="visao-geral">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Contexto</p>
+          <h2>Visão geral</h2>
+        </div>
+
+        <div class="content-block">
+
+          <div class="visao-geral-layout">
+            <div class="visao-geral-texto">
+              <p>Este estudo de caso apresenta o desenvolvimento do overlay e do template do meu canal de transmissões
+                ao vivo (lives) na Twitch, o Brumphomet. O nome une Brum, meu sobrenome, a Baphomet, entidade ligada à
+                alquimia e à renovação. O tema do canal é “Solve et Coagula”, expressão latina que significa “dissolver
+                e coagular”: destruir para reconstruir, trabalhando com contrastes.</p>
+              <p>O desafio era criar a identidade visual e o overlay do canal sem orçamento inicial, de modo que
+                refletissem minha personalidade, que une o delicado e o intenso. Para representar esse contraste, usei
+                principalmente rosa e preto, explorando a tensão entre uma estética delicada e outra mais agressiva.</p>
+              <br>
+            </div>
+
+            <figure class="shot"><img src="assets/img/pagina-atual-2026.jpg"
+                alt="Estado atual da página do projeto, setembro de 2026.">
+              <figcaption>Registro atual do canal, em <strong>setembro de 2026</strong>.</figcaption>
+            </figure>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <div class="section-end-sentinel"></div>
+
+
+
+    <!-- Identidade-->
+    <section id="identidade">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Marca</p>
+          <h2>Identidade</h2>
+        </div>
+
+        <div class="content-block reveal">
+          <p>Todos os elementos do overlay, de emojis e ícones a fundos de cena, cores e contrastes temáticos, partiram
+            da minha personalidade e da identidade do canal.</p>
+        </div>
+
+        <div class="content-block reveal">
+          <h3>Tipografia</h3>
+          <p>Para manter baixo o investimento inicial, usei uma fonte gratuita. A que melhor se encaixou foi a
+            “ArtDystopia II”, que remete a logotipos de bandas de black metal: tem traços desconectados e ramificados,
+            que lembram chamas, rasgos, raízes e outros elementos da subcultura desse gênero musical. A escolha também
+            combina com as cores definidas para o canal.</p>
+        </div>
+
+        <!-- Referências visuais -->
+        <div class="content-block reveal">
+
+
+          <div>
+            <h3>Referências visuais</h3>
+            <p>Os logotipos de duas bandas de black metal serviram de referência visual para o lettering da marca.</p>
+          </div>
+          <div class="shot-grid shot-grid--2">
+
+            <figure class="shot shot--logo"><img src="assets/img/logodarkfuneral.png"
+                alt="Logotipo da banda Dark Funeral: letras góticas dentro de um pentagrama com chamas e cruzes invertidas">
+              <figcaption>Logo da banda “Dark Funeral” — gênero: black metal</figcaption>
+            </figure>
+            <figure class="shot shot--logo"><img src="assets/img/logorottingchrist.png"
+                alt="Logotipo da banda Rotting Christ: letras irregulares e ramificadas, como raízes">
+              <figcaption>Logo da banda “Rotting Christ” — gênero: black metal</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="content-block reveal">
+          <h3>Paleta de cores</h3>
+          <p>Rosa e preto predominam em todas as cenas e representam o contraste entre o delicado e o intenso.</p>
+          <ul class="color-grid" aria-label="Cores da paleta">
+            <li class="color-token"><span class="color-swatch" style="background:#111111"
+                aria-hidden="true"></span><span class="color-name">Base</span><span class="color-desc">Preto —
+                fundo</span><span class="color-value" translate="no">#111111</span></li>
+            <li class="color-token"><span class="color-swatch" style="background:#8F075A"
+                aria-hidden="true"></span><span class="color-name">Secundária</span><span class="color-desc">Vinho — cor
+                secundária</span><span class="color-value" translate="no">#8F075A</span></li>
+            <li class="color-token"><span class="color-swatch" style="background:#E51C78"
+                aria-hidden="true"></span><span class="color-name">Destaque</span><span class="color-desc">Rosa —
+                destaque</span><span class="color-value" translate="no">#E51C78</span></li>
+            <li class="color-token"><span class="color-swatch" style="background:#FFFFFF"
+                aria-hidden="true"></span><span class="color-name">Realces</span><span class="color-desc">Branco —
+                realces</span><span class="color-value" translate="no">#FFFFFF</span></li>
+          </ul>
+        </div>
+
+        <!-- Avisos da live -->
+        <div class="content-block reveal">
+          <h3>Telas de aviso da live</h3>
+          <p>Telas exibidas antes do início da transmissão e quando o canal está fora do ar, que mantêm a identidade
+            visual do canal nesses momentos.</p>
+          <div class="shot-grid shot-grid--2">
+            <figure class="shot"><img src="assets/img/printliveonline.png"
+                alt="Tela de espera da live: logotipo Brumphomet em vermelho e rosa sobre fundo de fumaça escura, com a frase Começaremos em breve">
+              <figcaption><strong>Tela de espera</strong> — exibida antes da live começar, com a frase “Começaremos em
+                breve”.</figcaption>
+            </figure>
+            <figure class="shot"><img src="assets/img/printliveoffline.png"
+                alt="Tela de encerramento da live: logotipo Brumphomet sobre fundo de fumaça escura, com a palavra Offline">
+              <figcaption><strong>Tela de encerramento</strong> — exibida quando a live está fora do ar, com a palavra
+                “Offline”.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-end-sentinel"></div>
+
+    <!-- Do zero -->
+    <section id="do-zero">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Bastidores</p>
+          <h2>Começando do zero</h2>
+        </div>
+
+        <div class="content-block reveal">
+          <h3>Orçamento inicial: Zero</h3>
+          <p>Comecei com orçamento zero, sem webcam e com o microfone integrado ao headphone como único microfone. Para
+            a imagem, usei o celular como webcam, com o software gratuito “Iriun Webcam”. Não era o ideal, mas foi a
+            alternativa possível até que as lives gerassem retorno financeiro suficiente para comprar uma webcam.</p>
+          <p>Quando juntei o valor necessário com doações (donates) e pagamentos da plataforma, comprei uma webcam e um
+            microfone melhores. Para mim, investir no projeto trouxe retorno não só financeiro, mas também de realização
+            pessoal.</p>
+
+
+
+          <!-- Problema x solução 1 -->
+          <div class="tools-grid problem-solution">
+            <div class="tool-card">
+              <h3>Primeiro problema</h3>
+              <p>Eu não tinha webcam.</p>
+            </div>
+
+            <div class="tool-card">
+              <h3>A solução</h3>
+              <p>Usar um aplicativo gratuito que faz o computador reconhecer a câmera do celular como webcam, o que
+                permitiu começar o canal sem uma câmera dedicada.</p>
+            </div>
+          </div>
+
+          <div class="shot-grid shot-grid--2">
+
+            <figure class="shot"><img src="assets/img/problema-sem-webcam.jpg"
+                alt="Site do software Iriun Webcam, com botões de download para Windows, Mac e Ubuntu e a imagem de um celular usado como webcam">
+              <figcaption><strong>Iriun Webcam</strong> — software que faz o computador reconhecer o celular como
+                webcam.</figcaption>
+            </figure>
+            <figure class="shot"><img src="assets/img/solucao-camera-celular.jpg"
+                alt="Registro de uma live: a streamer toca violão diante da câmera, com o chat à direita e um personagem do Bob Esponja no canto inferior esquerdo">
+              <figcaption><strong>Registro de um momento da live.</strong></figcaption>
+            </figure>
+          </div>
+
+
+
+
+          <!-- Problema x solução 2 -->
+          <div class="tools-grid problem-solution">
+
+            <div class="tool-card">
+              <h3>Segundo problema</h3>
+              <p>Eu não tinha Stream Deck (aparelho que permite macros/comandos).</p>
+            </div>
+
+            <div class="tool-card">
+              <h3>A solução</h3>
+              <p>Configurei atalhos no próprio aplicativo das lives (Streamlabs), transformando um teclado numérico em
+                um Stream Deck provisório.</p>
+            </div>
+          </div>
+
+          <div class="shot-grid shot-grid--2">
+
+            <figure class="shot"><img src="assets/img/streamdeckprofissional.png"
+                alt="Stream Deck profissional da El Gato">
+              <figcaption><strong>Stream Deck</strong> profissional, da El Gato.</figcaption>
+            </figure>
+
+
+
+            <figure class="shot"><img src="assets/img/streamdeckssimples.png"
+                alt="Stream Deck improvisado com teclado numérico.">
+              <figcaption>Stream Deck improvisado com teclado numérico.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <div class="section-end-sentinel"></div>
+
+    <!-- Apelo emocional -->
+    <section id="apelo-emocional">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Apelo Emocional: Nostalgia</p>
+          <h2>Quadro musical: Rádio JBrum FM</h2>
+        </div>
+
+        <div class="content-block reveal">
+          <p>A ideia inicial era fazer lives de games, mas surgiu a possibilidade de transmitir também maquiagem e
+            conversas informais, na categoria “Just Chatting”. Para essas lives, decidi apostar na nostalgia, usando a
+            música como ponto de partida.</p>
+          <p>JBrum FM é um quadro em que me apresento pelo sobrenome “Brum” e faço, ao mesmo tempo, um trocadilho com
+            ele e uma alusão à JB FM, emissora de rádio brasileira sediada no Rio de Janeiro. No quadro, converso com os
+            espectadores enquanto assistimos a videoclipes e atendo a pedidos musicais, como acontecia nas rádios e em
+            canais como MTV e TVZ.</p>
+          <p>Também desenvolvi um logotipo inspirado no original, como homenagem bem-humorada à JB FM e para despertar
+            nostalgia nos espectadores, como se eu fosse radialista.</p>
+          <div class="shot-grid shot-grid--2">
+            <figure class="shot shot--logo">
+              <img src="assets/img/logojbfm.png" alt="Logo da rádio JB FM 99,9, em azul e branco">
+              <figcaption>Logo original da rádio JB FM, usada como referência</figcaption>
+            </figure>
+            <figure class="shot shot--logo">
+              <img src="assets/img/logojbrumfm.png" alt="Logo fictícia JBrum FM 66,6, em rosa e preto">
+              <figcaption>Logo da rádio fictícia JBrum FM</figcaption>
+            </figure>
+
+          </div>
+
+
+          <!-- Vídeo: gravação da vinheta JBrum FM (Vimeo) -->
+
+          <figure class="vimeo-block">
+            <div class="vimeo-block__frame">
+              <iframe class="vimeo-block__player"
+                src="https://player.vimeo.com/video/1232111221?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                title="Documentação: Gravação da vinheta JBrum FM" frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <figcaption class="vimeo-block__caption">
+              Vídeo de documentação: a gravação da vinheta JBrum FM e a comparação com a vinheta original da JB FM,
+              usada como referência.
+            </figcaption>
+          </figure>
+
+<br>
+            <p class="acenter">(Peço desculpas pelos cabelos um pouco fora do lugar neste registro. O processo criativo nem sempre é tão bonito quanto o resultado final!)</p>
+
+
+        </div>
+
+      </div>
+    </section>
+    <div class="section-end-sentinel"></div>
+
+    <!-- Configurações -->
+    <section id="configuracoes">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Produção</p>
+          <h2>Configurações</h2>
+        </div>
+
+        <div class="content-block">
+          <div>
+            <h3>Estrutura e boas práticas</h3>
+            <p>Realizo a organização em camadas para montar cada cena da transmissão.</p>
+
+            <p>Nomeio as camadas e as pastas de acordo com a função de cada uma, para encontrar o que preciso com
+              facilidade sempre que faço alterações. Também aplico filtros de áudio e de imagem conforme a necessidade
+              de cada dispositivo, como microfones e câmeras.</p>
+
+            <div class="shot-grid shot-grid--feature">
+              <figure class="shot"><img src="assets/img/organizacao-camadas-1.jpg"
+                  alt="Tela do Streamlabs com a prévia da cena, a lista de fontes e o mixer de áudio"></figure>
+              <figure class="shot"><img src="assets/img/organizacao-camadas-2.jpg"
+                  alt="Lista de fontes do Streamlabs com camadas nomeadas por função: Livepix, Emotes na tela, Chat, Alert Box, JBrum FM, Minha câmera e Janela para vídeo">
+              </figure>
+              <figure class="shot"><img src="assets/img/organizacao-camadas-3.jpg"
+                  alt="Painel de regras do chat: assédio é ban, respeito a todos, educação e links apenas por sussurro">
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-block reveal">
+          <h3>Monitoramento</h3>
+          <p>Mesmo com as regras do chat exibidas antes de os espectadores enviarem mensagens, é preciso monitorá-lo o
+            tempo todo. Para isso, uso o Nightbot, que envia lembretes periódicos sobre boa convivência, e conto com
+            moderadores de confiança, que podem excluir mensagens e banir ou bloquear espectadores.</p>
+          <p>Eu mesma também acompanho a transmissão em um segundo monitor, pelo Streamlabs e pelo navegador. No Google
+            Chrome, uso a extensão “Easy Auto Refresh” para atualizar a página automaticamente a cada 10 segundos, o que
+            evita que o Streamlabs deixe passar mensagens sem que eu perceba. Assim, tenho duas fontes de monitoramento
+            do chat e da transmissão. Acredito que esse cuidado com os detalhes ajuda a fidelizar o público.</p>
+        </div>
+      </div>
+    </section>
+    <div class="section-end-sentinel"></div>
+
+    <!-- Retorno financeiro -->
+    <section id="retorno">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Resultados</p>
+          <h2>Retorno financeiro e investimento</h2>
+        </div>
+
+        <div class="content-block reveal">
+          <div>
+            <h3>Saques da LivePix</h3>
+            <p>Uso a LivePix para não expor meus dados pessoais como destinatária de transferências via Pix. A
+              plataforma gerencia as doações dos espectadores e exibe as mensagens na tela em tempo real.</p><br>
+          </div>
+          <div class="content-block__media">
+            <figure class="shot"><img src="assets/img/saques-livepix.jpg"
+                alt="Histórico de saques da plataforma LivePix"></figure>
+          </div>
+        </div>
+
+        <div class="content-block reveal">
+          <div>
+            <h3>Pagamentos da Twitch</h3>
+            <p>Pagamentos em dólar feitos pela Twitch, referentes ao contrato de Streamer Afiliado.</p><br>
+          </div>
+
+          <figure class="shot"><img src="assets/img/pagamentos-twitch.jpg" alt="Histórico de pagamentos da Twitch">
+          </figure>
+
+        </div>
+
+        <div class="content-block reveal">
+          <p>Para controlar as cenas da live, uso um Stream Deck, comprado com o retorno financeiro das lives e
+            configurado com o software do próprio fabricante. No Streamlabs, criei as cenas necessárias para interagir
+            com os espectadores e, à medida que surgiam novas necessidades ao longo das transmissões, acrescentei
+            outras, para ter a interatividade que eu queria.</p>
+          <p>Para o quadro JBrum FM, configurei vinhetas prontas encontradas na internet e outras que gravei com a minha
+            voz, no estilo das vinhetas tradicionais de rádio, para trazer nostalgia a uma transmissão pela internet.
+            Também configurei memes, antigos e recentes, que uso de vez em quando durante as lives. Pelo que observo, os
+            espectadores se identificam com eles e reagem bem.</p>
+
+          <div class="shot-grid shot-grid--2 shot-grid--photos">
+            <figure class="shot"><img src="assets/img/macros-scenes.jpg" alt="Macros de cenas do overlay">
+              <figcaption>Macros de cenas do overlay</figcaption>
+            </figure>
+            <figure class="shot"><img src="assets/img/vinhetas-jbrumfm.jpg" alt="Vinhetas da JBrum FM">
+              <figcaption>Vinhetas da JBrum FM</figcaption>
+            </figure>
+            <figure class="shot"><img src="assets/img/memes-interacao.jpg"
+                alt="Memes usados para interagir com os espectadores">
+              <figcaption>Memes para interagir com os espectadores</figcaption>
+            </figure>
+            <figure class="shot"><img src="assets/img/webcam-logitech-c920.jpg" alt="Webcam Logitech C920">
+              <figcaption>Webcam Logitech C920, comprada com as doações (donates)</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-end-sentinel"></div>
+
+    <!-- Interatividade e engajamento -->
+    <section id="interatividade">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Engajamento</p>
+          <h2>Interatividade e engajamento</h2>
+        </div>
+
+        <div class="content-block content-block--media reveal">
+          <div>
+            <h3>Sistema de resgate de pontos</h3>
+            <p>Assim como aciono sons de memes pelo Stream Deck, os espectadores podem resgatar sons durante a live com
+              os pontos de canal que ganham ao assistir às transmissões, funcionalidade nativa da Twitch. Disponibilizo
+              todos os sons que uso e alguns extras exclusivos, editados para não atrapalhar o andamento da live.</p>
+          </div>
+          <div class="content-block__media">
+            <figure class="shot"><img src="assets/img/sistema-pontos.jpg" alt="Sistema de resgate de pontos da Twitch">
+            </figure>
+          </div>
+        </div>
+
+        <div class="content-block reveal">
+          <h3>Integração, ferramentas e acessibilidade</h3>
+          <p>Para ampliar a interatividade da transmissão ao vivo, integrei ferramentas como Triggerfyre,
+            StreamElements, Nightbot e Stream-CC, entre outras.</p>
+          <div class="tools-grid">
+            <div class="tool-card">
+              <div class="tool-icon"><img src="assets/icons/triggerfyre.png" alt=""></div>
+              <h4>Triggerfyre</h4>
+              <p>Gerencia alertas interativos de som e vídeo na tela: o chat ativa memes, clipes de áudio ou animações
+                com pontos de canal ou comandos.</p>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon"><img src="assets/icons/streamelements.jpg" alt=""></div>
+              <h4>StreamElements</h4>
+              <p>Plataforma que reúne overlays na nuvem, bots de chat, alertas de seguidores e de inscrições e sistema
+                de fidelidade.</p>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon"><img src="assets/icons/Nightbot.png" alt=""></div>
+              <h4>Nightbot</h4>
+              <p>Moderador automático: responde a comandos, filtra palavras ofensivas, evita spam e gerencia sorteios e
+                pedidos de música.</p>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon"><img src="assets/icons/streamcc.png" alt=""></div>
+              <h4>Stream-CC</h4>
+              <p>Gera legendas ocultas (closed captions) automáticas em tempo real, que transcrevem a voz para tornar a
+                transmissão acessível a pessoas com deficiência auditiva.</p>
+
+            </div>
+          </div>
+
+          <div class="shot-grid shot-grid--2 shot-grid--photos">
+            <figure class="shot"><img src="assets/img/closedcaptions1.jpg"
+                alt="Livestream com closed captions gerados pelo Stream-CC">
+              <figcaption>Closed captions gerados pelo Stream-CC</figcaption>
+            </figure>
+
+            <figure class="shot"><img src="assets/img/closedcaptions2.jpg"
+                alt="Livestream com closed captions gerados pelo Stream-CC">
+              <figcaption>Closed captions gerados pelo Stream-CC</figcaption>
+            </figure>
+
+
+
+          </div>
+
+        </div>
+
+
+        <!-- Público internacional -->
+        <div class="content-block reveal">
+          <h3>Público internacional</h3>
+          <p>Embora as lives sejam em português, o público também inclui espectadores internacionais: há interação no
+            chat em português, inglês e alemão. Por isso, incluí um aviso informando que também respondo em inglês e
+            alemão, para tornar a comunicação mais acessível a espectadores de diferentes países.</p>
+        </div>
+
+
+        <!-- Constância -->
+        <div class="content-block content-block--media content-block--media-right reveal">
+          <div>
+            <h3>Baldur's Gate 3: integração com a Twitch</h3>
+            <p>Com o tempo, passei a transmitir “Baldur's Gate 3”, RPG premiado que tem integração com a Twitch. Por
+              meio dela, os espectadores podem passar o mouse sobre o vídeo para ver ficha, inventário, condições e
+              missões dos personagens e votar em enquetes durante os diálogos.</p>
+          </div>
+          <div class="content-block__media">
+            <figure class="shot"><img src="assets/img/votacao-bg3.jpg"
+                alt="Enquete de votação durante transmissão de Baldur's Gate 3">
+              <figcaption>Votação em que os espectadores decidem uma escolha em Baldur's Gate 3, da Larian Studios.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+
+        <!-- Redes sociais -->
+
+
+        <div class="content-block reveal">
+          <h3>Outras redes sociais e cortes das lives</h3>
+          <p>Além das lives, publico reels no Instagram, vídeos no TikTok e shorts no YouTube e, atualmente, escrevo
+            roteiros para, em breve, publicar vídeos longos no YouTube. O conteúdo gira em torno de Baldur's Gate 3 e
+            Magic: The Gathering.</p>
+          <p>Publico cortes das lives em vídeos curtos, com trechos de gameplay e de interação com o chat. Como próximo
+            passo, pretendo transmitir partidas de Magic no Table Commander, site em que cadastro meus decks e jogo com
+            amigos.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Vídeos de cortes das lives -->
+
+    <section id="videos" class="videos">
+      <div class="wrap wrap--wide">
+        <div class="section-head reveal">
+          <p class="eyebrow">Melhores momentos</p>
+          <h2>Cortes das lives e presença<br>em outras redes sociais</h2>
+          <p class="videos-lead">Gameplays, conversas e interações com o chat em vídeos curtos. Os títulos são os mesmos
+            publicados nas redes sociais, em linguagem informal, pensada para um público jovem e gamer.</p>
+        </div>
+
+
+        <div class="carousel-shell reveal" role="region" aria-roledescription="carousel" aria-label="Clipes da live">
+          <div class="carousel-toolbar">
+            <div class="carousel-controls">
+              <button type="button" class="car-btn" id="carPrev" aria-label="Clipe anterior"><svg width="16" height="16"
+                  viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg></button>
+              <button type="button" class="car-btn" id="carNext" aria-label="Próximo clipe"><svg width="16" height="16"
+                  viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg></button>
+            </div>
+          </div>
+
+
+
+
+          <div class="carousel" id="carousel" tabindex="0"
+            aria-label="Clipes da live. Role para o lado ou use as setas do teclado.">
+
+            <!-- Início vídeo -->
+            <article class="short-card">
+              <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/xoGr1_A8Kk0"
+                aria-label="Reproduzir vídeo: Laroyê, Raphael">
+                <img src="https://i.ytimg.com/vi/xoGr1_A8Kk0/hqdefault.jpg" alt="" loading="lazy">
+                <span class="short-badge">Short</span>
+                <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg></span>
+              </button>
+
+              <div class="short-meta">
+                <h4>LAROYÊ, RAPHAEL</h4><span>Clipe da live:<br><i>Baldur's Gate 3</i></span>
+              </div>
+            </article>
+            <!-- Fim vídeo -->
+
+
+
+            <!-- Início vídeo -->
+            <article class="short-card">
+              <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/oiYyLEhxSwE"
+                aria-label="Reproduzir vídeo: Deck da Meren de uma iniciante no Magic">
+                <img src="https://i.ytimg.com/vi/oiYyLEhxSwE/hqdefault.jpg" alt="" loading="lazy">
+                <span class="short-badge">Short</span>
+                <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg></span>
+              </button>
+
+
+              <div class="short-meta">
+                <h4>Deck da Meren de uma iniciante no Magic 💚🖤</h4><span>YouTube<br>Magic: <i>The
+                    Gathering</i></span>
+              </div>
+            </article>
+            <!-- Fim vídeo -->
+
+
+
+            <!-- Início vídeo -->
+
+            <article class="short-card">
+              <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/jhUL2KJcs4s"
+                aria-label="Reproduzir vídeo: Será que aceita?">
+                <img src="https://i.ytimg.com/vi/jhUL2KJcs4s/hqdefault.jpg" alt="" loading="lazy">
+                <span class="short-badge">Short</span>
+                <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg></span>
+              </button>
+
+              <div class="short-meta">
+                <h4>Será que aceita?</h4><span>Clipe da live:<br><i>Baldur's Gate 3</i></span>
+              </div>
+            </article>
+
+            <!-- Fim vídeo -->
+
+
+
+
+            <!-- Início vídeo -->
+            <article class="short-card">
+              <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/5BSs2KP8oTw"
+                aria-label="Reproduzir vídeo: Wincon: Gostosa demais pra perder.">
+                <img src="https://i.ytimg.com/vi/5BSs2KP8oTw/hqdefault.jpg" alt="" loading="lazy">
+                <span class="short-badge">Short</span>
+                <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg></span>
+              </button>
+              <div class="short-meta">
+                <h4>Wincon: Gostosa demais pra perder. 💅✨️🫦🥵</h4><span>YouTube<br>Magic: <i>The
+                    Gathering</i></span>
+              </div>
+            </article>
+            <!-- Fim vídeo -->
+
+
+
+
+
+            <!-- Início vídeo -->
+            <article class="short-card">
+              <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/eZMC893IpTQ"
+                aria-label="Reproduzir vídeo: Tutorial: Pegando baús sem lutar: Elemental de lava - Forja Adamantina">
+                <img src="https://i.ytimg.com/vi/eZMC893IpTQ/hqdefault.jpg" alt="" loading="lazy">
+                <span class="short-badge">Short</span>
+                <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg></span>
+              </button>
+
+              <div class="short-meta">
+                <h4>Tutorial: Pegando baús sem lutar: Elemental de lava - Forja Adamantina</h4><span>Tutorial:
+                  <i>Baldur's Gate 3</i></span>
+              </div>
+            </article>
+            <!-- Fim vídeo -->
+
+
+
+
+            <!-- Início vídeo -->
+            <article class="short-card">
+              <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/IO6650xwtDg"
+                aria-label="Reproduzir vídeo: ratatui pleis in the background">
+                <img src="https://i.ytimg.com/vi/x95igS0xGM0/hqdefault.jpg" alt="" loading="lazy">
+                <span class="short-badge">Short</span>
+                <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg></span>
+              </button>
+              <div class="short-meta">
+                <h4>🗡 🐀 ✨️[ ratatui pleis in the background ]</h4><span>Clipe da live</span>
+
+              </div>
+
+
+
+            </article>
+
+            <!-- Fim vídeo -->
+
+
+            <!-- Início vídeo -->
+            <article class="short-card">
+              <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/N6G1jzVPTSA"
+                aria-label="Reproduzir vídeo: Meu primeiro pré-release da vida! O Hobbit.">
+                <img src="https://i.ytimg.com/vi/N6G1jzVPTSA/hqdefault.jpg" alt="" loading="lazy">
+                <span class="short-badge">Short</span>
+                <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg></span>
+              </button>
+              <div class="short-meta">
+                <h4>Meu primeiro pré-release da vida! O Hobbit.</h4><span>YouTube<br>Magic: <i>The
+                    Gathering</i></span>
+              </div>
+            </article>
+
+            <!-- Fim vídeo -->
+
+
+
+            <!-- Início vídeo -->
+            <article class="short-card">
+              <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/dhXTmAuVg9Q"
+                aria-label="Reproduzir vídeo: Eu não faço as regras. BORA?">
+                <img src="https://i.ytimg.com/vi/dhXTmAuVg9Q/hqdefault.jpg" alt="" loading="lazy">
+                <span class="short-badge">Short</span>
+                <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg></span>
+              </button>
+
+
+              <div class="short-meta">
+                <h4>Eu não faço as regras 🤷‍♀️ 🍻 BORA?</h4><span>Clipe da live</span>
+              </div>
+            </article>
+            <!-- Fim vídeo -->
+
+
+
+            <!-- Início vídeo -->
+            <article class="short-card">
+              <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/dOJX-qU5bcY"
+                aria-label="Reproduzir vídeo: Gráficos de última geração">
+                <img src="https://i.ytimg.com/vi/dOJX-qU5bcY/hqdefault.jpg" alt="" loading="lazy">
+                <span class="short-badge">Short</span>
+                <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg></span>
+              </button>
+              <div class="short-meta">
+                <h4>Gráficos de última geração 🌚</h4><span>Clipe da live</span>
+
+              </div>
+            </article>
+
+            <!-- Fim vídeo -->
+
+
+            <!-- Início vídeo -->
+            <article class="short-card">
+              <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/5qetMKXKcWA"
+                aria-label="Reproduzir vídeo: I don't make the rules, now we gotta play.">
+                <img src="https://i.ytimg.com/vi/5qetMKXKcWA/hqdefault.jpg" alt="" loading="lazy">
+                <span class="short-badge">Short</span>
+                <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg></span>
+              </button>
+              <div class="short-meta">
+                <h4>I don't make the rules 🤷‍♀️ now we gotta play</h4><span>Trend das redes sociais<br>Magic:
+                  <i>The
+                    Gathering</i></span>
+              </div>
+            </article>
+
+            <!-- Fim vídeo -->
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-end-sentinel"></div>
+
+
+    <!-- APRENDIZADOS -->
+    <section id="aprendizados" class="highlight">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow eyebrow--pill">E agora?</p>
+          <h2>Aprendizados</h2>
+        </div>
+
+        <div class="content-block content-block--feature reveal">
+          <h3>O que este projeto trouxe à minha jornada</h3>
+          <p>Este caso reforçou minha crença de que o trabalho em equipe, tanto entre pessoas quanto entre plataformas,
+            é essencial para um bom projeto. Durante a configuração do overlay e de todos os outros aspectos das lives e da marca Brumphomet, pesquisei, assisti a
+            tutoriais, conversei com outros streamers e consultei os espectadores, buscando um
+            resultado que me satisfizesse pessoal e profissionalmente e que também agradasse à comunidade que construímos juntos.
+          </p>
+          <p>Também acredito que cuidado e planejamento levam a resultados muito satisfatórios.</p>
+          <p>O protótipo inicial deste estudo de caso está disponível no <a
+              href="https://www.figma.com/design/fXuQ8kJrxrcjQbY4glrwgf/Portf%C3%B3lio---Alessandra-Brum---Caso--Brumphomet--Lives-na-Twitch.tv-?node-id=2092-27&t=RpsiWjJjl8a0ZAa1-0"
+              target="_blank" rel="noopener">Figma</a> para consulta detalhada.</p>
+        </div>
+
+        <div class="content-block reveal">
+          <h3>Redes sociais</h3>
+          <!-- Ícones em rosa (magenta), viram cinza no hover — igual o resto
+             dos links do site. Pra trocar um ícone, troque só o <path> do svg. -->
+          <div class="social-row">
+            <a href="https://www.twitch.tv/brumphomet" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 2 2 7v13h6v2h4l2-2h5l4-4V2H4zm17 12-3 3h-5l-2 2v-2H6V4h15v10z" />
+                <path d="M14 7h2v5h-2zM9 7h2v5H9z" />
+              </svg>
+              Twitch
+            </a>
+            <a href="https://www.behance.net/alessandrabrum" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4 5h6.5a3.5 3.5 0 0 1 2.9 5.4A3.6 3.6 0 0 1 15 14a3.9 3.9 0 0 1-4 4H4V5zm2.2 2v3.3h3.7a1.65 1.65 0 0 0 0-3.3H6.2zm0 5.3V17h4a2 2 0 0 0 0-4h-4zM16 8.6h5.4v1.3H16zM23 15a4.2 4.2 0 0 1-4.2 3.3c-2.6 0-4.4-1.8-4.4-4.4 0-2.5 1.8-4.5 4.3-4.5 2.8 0 4.3 2.1 4.3 5H16.6a2 2 0 0 0 2.1 1.9 2 2 0 0 0 1.8-1zm-2.2-2.4a1.9 1.9 0 0 0-1.9-1.7 1.9 1.9 0 0 0-2 1.7h3.9z" />
+              </svg>
+              Behance
+            </a>
+            <a href="https://www.linkedin.com/in/alessandrabrum/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.9-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.3c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z" />
+              </svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/AlessandraBrum" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1-1.5-1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.3 1.1 2.9.9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7c-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.9 1a10 10 0 0 1 5.2 0c2-1.3 2.9-1 2.9-1 .6 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0 0 12 2z" />
+              </svg>
+              GitHub
+            </a>
+            <a href="mailto:alessandrabrumcontato@gmail.com">
+              <svg viewBox="0 0 24 24">
+                <path d="M2 5h20v14H2zm2 2v.5l8 5.5 8-5.5V7l-8 5.5z" />
+              </svg>
+              E-mail
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <!-- Currículo -->
+    <div class="page-cta reveal"><a class="btn" href="assets/Curriculo-Alessandra-Brum.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        Baixar currículo</a></div>
+    <p>© Alessandra Brum, 2026. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Seta "voltar ao topo": some por padrão, só surge perto do fim de cada seção -->
+  <button class="scroll-hint" id="scrollHint" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
