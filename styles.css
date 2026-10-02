@@ -1333,3 +1333,13 @@ body {
   outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
+
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social-row > .social-break {
+  flex-basis: 100%;
+  height: 0;
+}
