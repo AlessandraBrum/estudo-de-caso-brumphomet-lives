@@ -958,6 +958,11 @@ footer {
   text-align: center;
 }
 
+/* Link da versão resumida no rodapé (reaproveita .social-row) */
+footer .footer-links {
+  margin: var(--space-6) 0 var(--space-4);
+}
+
 footer p {
   font-size: 12px;
   color: var(--color-text-muted);
