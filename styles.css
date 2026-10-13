@@ -783,7 +783,7 @@ figure.shot figcaption {
 .short-card {
   scroll-snap-align: start;
   flex: 0 0 auto;
-  width: clamp(170px, 46vw, 220px);
+  width: clamp(200px, 52vw, 220px);
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--color-surface);
@@ -1362,3 +1362,456 @@ body {
   flex-basis: 100%;
   height: 0;
 }
+
+/* ==========================================================================
+   INÍCIO ACABAMENTO VISUAL (ornamentos, molduras e superfícies)
+   ========================================================================== */
+
+/* ---------- INÍCIO TOKENS DE ACABAMENTO ---------- */
+:root {
+  /* sombra magenta */
+  --shadow-magenta: 0 10px 36px rgba(212, 20, 90, .22);
+  /* filete magenta que esmaece nas pontas */
+  --rule-fade: linear-gradient(90deg, rgba(212, 20, 90, 0) 0%, rgba(212, 20, 90, .55) 50%, rgba(212, 20, 90, 0) 100%);
+  /* superfície das caixas */
+  --surface-gradient: linear-gradient(180deg, #1E191E 0%, #1A1118 100%);
+  --inner-highlight: inset 0 1px 0 rgba(245, 244, 245, .04);
+  /* textura de grão (SVG), decorativa */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* ---------- FIM TOKENS DE ACABAMENTO ---------- */
+
+/* ---------- INÍCIO DIVISORES DE SEÇÃO (filete + losango) ---------- */
+#main>section {
+  position: relative;
+  border-top: 0;
+}
+
+#main>section:not(:first-child)::before,
+#main>section:not(:first-child)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  pointer-events: none;
+}
+
+/* filete */
+#main>section:not(:first-child)::before {
+  top: 0;
+  width: min(920px, 100%);
+  height: 1px;
+  transform: translateX(-50%);
+  background: var(--rule-fade);
+}
+
+/* losango central */
+#main>section:not(:first-child)::after {
+  top: -4px;
+  width: 9px;
+  height: 9px;
+  transform: translateX(-50%) rotate(45deg);
+  background: var(--color-bg);
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 0 10px rgba(212, 20, 90, .45);
+}
+
+/* Vídeos e Aprendizados */
+#main>.videos,
+#main>.highlight {
+  border-top: 0 !important;
+}
+
+#main>.highlight::before {
+  width: min(920px, 100%);
+  height: 1px;
+  top: 0;
+  background: var(--rule-fade);
+}
+/* ---------- FIM DIVISORES DE SEÇÃO ---------- */
+
+/* ---------- INÍCIO CABEÇALHOS DE SEÇÃO ---------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  letter-spacing: .16em;
+}
+
+/* filete antes do rótulo */
+.section-head .eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--gradient-primary);
+  flex: none;
+}
+
+.section-head .eyebrow--pill::before {
+  display: none;
+}
+
+.section-head h2 {
+  position: relative;
+  padding-bottom: var(--space-4);
+}
+
+/* sublinhado curto no degradê principal */
+.section-head h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 56px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--gradient-primary);
+}
+
+/* sublinhado centralizado */
+.acenter .section-head h2::after,
+.section-head.acenter h2::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* ---------- FIM CABEÇALHOS DE SEÇÃO ---------- */
+
+/* ---------- INÍCIO HERO ---------- */
+.hero {
+  position: relative;
+}
+
+/* halo vinho atrás do logo */
+.hero .wrap {
+  position: relative;
+}
+
+.hero .wrap::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  width: min(640px, 100%);
+  height: 320px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(118, 21, 56, .38) 0%, rgba(118, 21, 56, 0) 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero .eyebrow {
+  letter-spacing: .3em;
+}
+
+/* pequenos losangos dos dois lados do rótulo do hero */
+.hero .eyebrow::before,
+.hero .eyebrow::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  transform: rotate(45deg);
+  border: 1px solid var(--color-primary);
+  flex: none;
+}
+
+.hero-meta>div {
+  position: relative;
+  border-top: 0;
+}
+
+.hero-meta>div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(212, 20, 90, .7) 0%, rgba(118, 21, 56, .35) 50%, rgba(41, 37, 42, 1) 100%);
+}
+
+.hero-meta span {
+  letter-spacing: .16em;
+}
+/* ---------- FIM HERO ---------- */
+
+/* ---------- INÍCIO NAVEGAÇÃO ---------- */
+.nav {
+  border-bottom: 0;
+}
+
+.nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--rule-fade);
+  pointer-events: none;
+}
+
+.nav-links {
+  background: var(--surface-gradient);
+  box-shadow: var(--shadow-md);
+}
+
+@media(min-width:1100px) {
+  .nav-links {
+    background: none;
+    box-shadow: none;
+  }
+
+  .nav-links a.active {
+    background: rgba(212, 20, 90, .1);
+    box-shadow: inset 0 0 0 1px rgba(212, 20, 90, .55);
+    color: var(--color-text-primary);
+  }
+}
+
+.brand-kicker {
+  letter-spacing: .18em;
+}
+/* ---------- FIM NAVEGAÇÃO ---------- */
+
+/* ---------- INÍCIO CAIXAS DE CONTEÚDO ---------- */
+.content-block {
+  position: relative;
+  background: var(--surface-gradient);
+  border-color: rgba(212, 20, 90, .14);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--inner-highlight), var(--shadow-sm);
+  transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+}
+
+/* cantos ornamentais em L (superior esquerdo e inferior direito) */
+.content-block::before,
+.content-block::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  opacity: .55;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.content-block::before {
+  top: 8px;
+  left: 8px;
+  border-top: 1px solid var(--color-primary);
+  border-left: 1px solid var(--color-primary);
+  border-top-left-radius: 4px;
+}
+
+.content-block::after {
+  right: 8px;
+  bottom: 8px;
+  border-right: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-primary);
+  border-bottom-right-radius: 4px;
+}
+
+.content-block:hover,
+.content-block:focus-within {
+  border-color: rgba(212, 20, 90, .38);
+  box-shadow: var(--inner-highlight), var(--shadow-md);
+}
+
+.content-block:hover::before,
+.content-block:hover::after,
+.content-block:focus-within::before,
+.content-block:focus-within::after {
+  opacity: 1;
+}
+
+.content-block h3 {
+  letter-spacing: -0.02em;
+}
+
+.content-block__kicker {
+  letter-spacing: .16em;
+}
+/* ---------- FIM CAIXAS DE CONTEÚDO ---------- */
+
+/* ---------- INÍCIO MOLDURAS DE IMAGEM (passe-partout) ---------- */
+.shot {
+  border-color: rgba(212, 20, 90, .18);
+  box-shadow: 0 0 0 4px var(--color-bg-soft), 0 0 0 5px rgba(212, 20, 90, .12), var(--shadow-md);
+  transition: border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.shot:hover {
+  border-color: rgba(212, 20, 90, .45);
+  box-shadow: 0 0 0 4px var(--color-bg-soft), 0 0 0 5px rgba(212, 20, 90, .3), var(--shadow-md);
+}
+
+.shot-grid {
+  gap: var(--space-6);
+}
+
+figure.shot figcaption {
+  border-left: 2px solid var(--color-primary);
+  border-top: 1px solid rgba(212, 20, 90, .14);
+}
+
+.vimeo-block__frame {
+  box-shadow: 0 0 0 4px var(--color-bg-soft), 0 0 0 5px rgba(212, 20, 90, .12), var(--shadow-md);
+}
+/* ---------- FIM MOLDURAS DE IMAGEM ---------- */
+
+/* ---------- INÍCIO CARDS DE FERRAMENTA E PALETA ---------- */
+.tool-card,
+.color-token {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--inner-highlight);
+}
+
+/* borda superior em degradê */
+.tool-card::before,
+.color-token::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  opacity: .7;
+}
+
+.tool-card:hover,
+.color-token:hover {
+  border-color: rgba(212, 20, 90, .4);
+}
+
+.tool-icon {
+  box-shadow: 0 0 0 1px var(--color-surface-elevated), 0 0 0 2px rgba(212, 20, 90, .5), 0 6px 16px rgba(118, 21, 56, .45);
+}
+
+.color-swatch {
+  box-shadow: inset 0 0 0 1px rgba(245, 244, 245, .06);
+}
+/* ---------- FIM CARDS DE FERRAMENTA E PALETA ---------- */
+
+/* ---------- INÍCIO BOTÕES ---------- */
+/* botão principal */
+.btn {
+  background: var(--gradient-primary);
+  border-color: rgba(255, 43, 120, .5);
+  border-radius: var(--radius-pill);
+  padding: var(--space-3) var(--space-8);
+  letter-spacing: .02em;
+  box-shadow: inset 0 1px 0 rgba(245, 244, 245, .18), var(--shadow-magenta);
+}
+
+.btn:hover {
+  background: var(--gradient-primary);
+  border-color: var(--color-accent);
+  box-shadow: inset 0 1px 0 rgba(245, 244, 245, .22), 0 0 0 4px rgba(212, 20, 90, .18), var(--shadow-magenta);
+}
+
+.car-btn {
+  background: var(--surface-gradient);
+  border-color: rgba(212, 20, 90, .35);
+  box-shadow: var(--inner-highlight);
+}
+
+.lang-switch {
+  border-color: rgba(212, 20, 90, .3);
+}
+
+.nav-toggle {
+  border-color: rgba(212, 20, 90, .3);
+}
+
+/* seta de voltar ao topo */
+.scroll-hint {
+  border-color: rgba(212, 20, 90, .6);
+  box-shadow: 0 0 0 4px rgba(17, 16, 18, .7), var(--shadow-md);
+}
+/* ---------- FIM BOTÕES ---------- */
+
+/* ---------- INÍCIO VÍDEOS (clipes) ---------- */
+.videos {
+  position: relative;
+  border-top: 0 !important;
+  border-bottom: 0;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(118, 21, 56, .35) 0%, rgba(118, 21, 56, 0) 50%),
+    radial-gradient(circle at 90% 100%, rgba(118, 21, 56, .22) 0%, rgba(118, 21, 56, 0) 45%);
+  box-shadow: inset 0 1px 0 rgba(212, 20, 90, .35), inset 0 -1px 0 rgba(212, 20, 90, .35);
+}
+
+.short-card {
+  border-color: rgba(212, 20, 90, .18);
+  box-shadow: var(--inner-highlight), var(--shadow-sm);
+}
+
+.short-badge {
+  border: 1px solid rgba(245, 244, 245, .25);
+  letter-spacing: .04em;
+}
+
+.short-play {
+  box-shadow: 0 0 0 6px rgba(245, 244, 245, .06);
+}
+/* ---------- FIM VÍDEOS ---------- */
+
+/* ---------- INÍCIO APRENDIZADOS ---------- */
+.highlight .content-block {
+  background: linear-gradient(180deg, rgba(30, 25, 30, .92) 0%, rgba(26, 17, 24, .92) 100%);
+}
+
+.highlight .content-block--feature {
+  background: var(--grain), var(--gradient-primary);
+  background-blend-mode: soft-light, normal;
+  box-shadow: inset 0 1px 0 rgba(245, 244, 245, .2), var(--shadow-magenta);
+}
+
+/* no bloco magenta, os cantos ornamentais ficam claros */
+.highlight .content-block--feature::before,
+.highlight .content-block--feature::after {
+  border-color: rgba(245, 244, 245, .7);
+}
+/* ---------- FIM APRENDIZADOS ---------- */
+
+/* ---------- INÍCIO RODAPÉ ---------- */
+footer {
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  display: block;
+  width: min(920px, 90%);
+  height: 1px;
+  margin: 0 auto var(--space-8);
+  background: var(--rule-fade);
+}
+/* ---------- FIM RODAPÉ ---------- */
+
+/* ---------- INÍCIO MOVIMENTO REDUZIDO ---------- */
+@media (prefers-reduced-motion: reduce) {
+
+  .content-block:hover,
+  .tool-card:hover,
+  .color-token:hover,
+  .btn:hover,
+  .car-btn:hover,
+  .short-card:hover,
+  .short-card:focus-within,
+  .scroll-hint:hover {
+    transform: none;
+  }
+
+  .scroll-hint.show,
+  .scroll-hint.show:hover {
+    transform: translateX(-50%);
+  }
+}
+/* ---------- FIM MOVIMENTO REDUZIDO ---------- */
+
+/* ==========================================================================
+   FIM ACABAMENTO VISUAL
+   ========================================================================== */

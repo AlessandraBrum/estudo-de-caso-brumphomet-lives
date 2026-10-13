@@ -60,7 +60,83 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: .15 });
 revealItems.forEach(el => revealObserver.observe(el));
 
-// 3. Carrossel de clipes (rolagem horizontal + setas)
+
+// 3. Um vídeo por vez (YouTube + Vimeo)
+// Quando um vídeo começa a tocar, os outros da página são pausados.
+
+const playersYouTube = new Set();
+const playersVimeo = [...document.querySelectorAll('iframe[src*="player.vimeo.com"]')];
+let apiYouTube = null;
+
+function carregarApiYouTube() {
+  if (apiYouTube) return apiYouTube;
+  apiYouTube = new Promise((resolve) => {
+    if (window.YT && window.YT.Player) return resolve(window.YT);
+    const anterior = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => {
+      if (typeof anterior === 'function') anterior();
+      resolve(window.YT);
+    };
+    const script = document.createElement('script');
+    script.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(script);
+  });
+  return apiYouTube;
+}
+
+function registrarPlayerYouTube(iframe) {
+  carregarApiYouTube().then((YT) => {
+    const player = new YT.Player(iframe, {
+      events: {
+        onStateChange: (e) => {
+          if (e.data === YT.PlayerState.PLAYING) pausarOutrosVideos(player);
+        }
+      }
+    });
+    playersYouTube.add(player);
+  });
+}
+
+function pausarVimeo(iframe) {
+  if (!iframe.contentWindow) return;
+  iframe.contentWindow.postMessage(JSON.stringify({ method: 'pause' }), 'https://player.vimeo.com');
+}
+
+function pausarOutrosVideos(atual) {
+  playersYouTube.forEach((player) => {
+    if (player !== atual && typeof player.pauseVideo === 'function') player.pauseVideo();
+  });
+  playersVimeo.forEach((iframe) => {
+    if (iframe !== atual) pausarVimeo(iframe);
+  });
+}
+
+function ouvirPlayVimeo(iframe) {
+  if (!iframe.contentWindow) return;
+  iframe.contentWindow.postMessage(
+    JSON.stringify({ method: 'addEventListener', value: 'play' }),
+    'https://player.vimeo.com'
+  );
+}
+
+playersVimeo.forEach((iframe) => {
+  iframe.addEventListener('load', () => ouvirPlayVimeo(iframe));
+  ouvirPlayVimeo(iframe);
+});
+
+window.addEventListener('message', (e) => {
+  if (e.origin !== 'https://player.vimeo.com') return;
+  let dados = e.data;
+  if (typeof dados === 'string') {
+    try { dados = JSON.parse(dados); } catch { return; }
+  }
+  const origem = playersVimeo.find((iframe) => iframe.contentWindow === e.source);
+  if (!origem || !dados) return;
+  if (dados.event === 'ready') ouvirPlayVimeo(origem);
+  if (dados.event === 'play') pausarOutrosVideos(origem);
+});
+
+// 3.1 Carrossel de clipes (rolagem horizontal + setas)
 // Toque: rolagem/swipe nativo com scroll-snap. Desktop: setas e teclado.
 // O vídeo só é carregado ao clicar no play (a miniatura vem do YouTube).
 
@@ -141,16 +217,27 @@ if (carousel && carPrev && carNext) {
       return;
     }
 
+    const parametros = new URLSearchParams({
+      autoplay: '1',
+      rel: '0',
+      playsinline: '1',
+      enablejsapi: '1'
+    });
+    if (location.origin.startsWith('http')) parametros.set('origin', location.origin);
+
     const iframe = document.createElement('iframe');
     iframe.className = 'short-player';
-    iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+    iframe.src = `https://www.youtube.com/embed/${id}?${parametros}`;
     iframe.title = (thumb.getAttribute('aria-label') || 'Clipe')
       .replace('Reproduzir clipe', 'Clipe');
-    iframe.allow = 'autoplay; accelerometer; encrypted-media; picture-in-picture';
+    iframe.allow = 'autoplay; fullscreen; accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share';
     iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
 
+    pausarOutrosVideos(null);
     thumb.replaceWith(iframe);
     iframe.focus();
+    registrarPlayerYouTube(iframe);
   });
 
   // 4. Scroll-spy: destaca o link do menu conforme a seção visível

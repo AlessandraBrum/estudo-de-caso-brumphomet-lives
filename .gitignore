@@ -1,0 +1,18 @@
+# ============================================================
+# .gitignore — arquivos e pastas que o Git deve IGNORAR
+# (não vão para o GitHub)
+# ============================================================
+
+# INÍCIO PASTA PESSOAL
+# Downloads e materiais de apoio guardados só no computador
+
+arquivos-pessoais/
+# FIM PASTA PESSOAL
+
+# INÍCIO ARQUIVOS DO SISTEMA
+# Lixo gerado automaticamente pelo Windows e pelo macOS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# FIM ARQUIVOS DO SISTEMA
