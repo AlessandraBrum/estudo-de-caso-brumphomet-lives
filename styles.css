@@ -1091,7 +1091,21 @@ footer p {
   outline-offset: -3px;
 }
 
+/* celular/tablet: idioma antes do hambúrguer; desktop: idioma no fim do menu */
+.lang-switch {
+  order: 1;
+}
+
+.nav-toggle {
+  order: 2;
+}
+
 @media(min-width:1100px) {
+  .lang-switch {
+    order: 0;
+    margin-left: var(--space-3);
+  }
+
   .lang-switch button {
     height: 32px;
   }

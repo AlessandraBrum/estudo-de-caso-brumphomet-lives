@@ -37,26 +37,27 @@
         <span class="brand-kicker">Estudo de caso</span>
         <span class="brand-name" translate="no">Alessandra Brum</span>
       </a>
-      <div class="lang-switch" role="group" aria-label="Idioma / Language / Sprache" translate="no">
-        <button type="button" data-lang="pt" lang="pt" aria-pressed="true">PT</button>
-        <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
-        <button type="button" data-lang="de" lang="de" aria-pressed="false">DE</button>
-      </div>
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <nav class="nav-links" aria-label="Seções da página" id="navLinks">
-        <a href="#home">Home</a>
+        <a href="#home" translate="no">Home</a>
         <a href="#visao-geral">Visão geral</a>
         <a href="#identidade">Identidade</a>
         <a href="#do-zero">Do zero</a>
         <a href="#apelo-emocional">Emocional</a>
         <a href="#configuracoes">Configurações</a>
-        <a href="#retorno">Retorno</a>
+        <a href="#retorno" translate="no" data-i18n-en="Financial Return" data-i18n-de="Ergebnisse">Retorno</a>
         <a href="#interatividade">Interatividade</a>
         <a href="#videos">Vídeos</a>
         <a href="#aprendizados">Aprendizados</a>
       </nav>
+      <!-- Seletor de idioma: fim do menu, na borda direita (no celular fica antes do hambúrguer via CSS order) -->
+      <div class="lang-switch" role="group" aria-label="Idioma / Language / Sprache" translate="no">
+        <button type="button" data-lang="pt" lang="pt" aria-pressed="true">PT</button>
+        <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="de" lang="de" aria-pressed="false">DE</button>
+      </div>
     </div>
   </header>
   <div class="nav-scrim" id="navScrim"></div>
@@ -70,8 +71,8 @@
 
         <div class="hero-logo reveal"><img src="assets/img/logocommorcegos1.png"
             alt="Logotipo Brumphomet, em lettering gótico com morcegos"></div>
-        <h1 class="reveal">Transmissões ao vivo</h1>
-        <p class="hero-lead reveal">Do zero à monetização: a construção de uma comunidade em transmissões ao vivo na
+        <h1 class="reveal" translate="no" data-i18n-en="Live Streams" data-i18n-de="Live Streams">Transmissões ao vivo</h1>
+        <p class="hero-lead reveal">Do zero à monetização: a construção de uma comunidade em <span translate="no" data-i18n-en="live streams" data-i18n-de="Live Streams">transmissões ao vivo</span> na
           Twitch.</p>
         <div class="hero-meta reveal">
           <div><span>Campo de estudo</span><strong>UX/UI Design</strong></div>

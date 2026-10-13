@@ -229,5 +229,12 @@ if (carousel && carPrev && carNext) {
     s.src = 'https://translate.google.com/translate_a/element.js?cb=gtInit';
     s.async = true;
     document.head.appendChild(s);
+
+    // Termos com tradução fixa (o Google errava): ficam com translate="no" no HTML
+    // e recebem o texto de data-i18n-en / data-i18n-de, ex.: Retorno → Financial Return / Ergebnisse.
+    document.querySelectorAll(`[data-i18n-${currentLang}]`).forEach(el => {
+      el.textContent = el.getAttribute(`data-i18n-${currentLang}`);
+      el.lang = currentLang;
+    });
   }
 }
