@@ -886,9 +886,10 @@ figure.shot figcaption {
   padding: var(--space-3) var(--space-4) var(--space-4);
 }
 
-.short-meta h4 {
+.short-title {
   font-size: 14px;
   font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-tight);
   margin-bottom: 2px;
   color: var(--color-text-primary);
 }

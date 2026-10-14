@@ -40,7 +40,7 @@
 
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
-->
+  ->
   <header class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="#home">
@@ -81,8 +81,10 @@
 
         <div class="hero-logo reveal"><img src="assets/img/logocommorcegos1.png"
             alt="Logotipo Brumphomet, em lettering gótico com morcegos"></div>
-        <h1 class="reveal" translate="no" data-i18n-en="Live Streams" data-i18n-de="Live Streams">Transmissões ao vivo</h1>
-        <p class="hero-lead reveal">Do zero à monetização: a construção de uma comunidade em <span translate="no" data-i18n-en="live streams" data-i18n-de="Live Streams">transmissões ao vivo</span> na
+        <h1 class="reveal" translate="no" data-i18n-en="Live Streams" data-i18n-de="Live Streams">Transmissões ao vivo
+        </h1>
+        <p class="hero-lead reveal">Do zero à monetização: a construção de uma comunidade em <span translate="no"
+            data-i18n-en="live streams" data-i18n-de="Live Streams">transmissões ao vivo</span> na
           Twitch.</p>
         <div class="hero-meta reveal">
           <div><span>Campo de estudo</span><strong>UX/UI Design</strong></div>
@@ -584,15 +586,15 @@
         </div>
 
 
-        <div class="carousel-shell reveal" role="region" aria-roledescription="carousel" aria-label="Clipes da live">
+        <div class="carousel-shell reveal" role="region" aria-roledescription="carrossel" aria-label="Carrossel de vídeos: clipes da live">
           <div class="carousel-toolbar">
             <div class="carousel-controls">
-              <button type="button" class="car-btn" id="carPrev" aria-label="Clipe anterior"><svg width="16" height="16"
+              <button type="button" class="car-btn" id="carPrev" aria-controls="carousel" aria-label="Clipe anterior"><svg width="16" height="16"
                   viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg></button>
-              <button type="button" class="car-btn" id="carNext" aria-label="Próximo clipe"><svg width="16" height="16"
+              <button type="button" class="car-btn" id="carNext" aria-controls="carousel" aria-label="Próximo clipe"><svg width="16" height="16"
                   viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
@@ -600,14 +602,15 @@
             </div>
           </div>
 
-          <div class="carousel" id="carousel" tabindex="0"
+          <div class="carousel" id="carousel" role="group" tabindex="0"
             aria-label="Clipes da live. Role para o lado ou use as setas do teclado.">
 
             <!-- Início vídeo -->
-            <article class="short-card">
+            <div class="short-card" role="group" aria-roledescription="slide" aria-label="1 de 10">
               <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/xoGr1_A8Kk0"
                 aria-label="Reproduzir vídeo: Laroyê, Raphael">
-                <img src="https://i.ytimg.com/vi/xoGr1_A8Kk0/hqdefault.jpg" alt="" loading="lazy">
+                <img src="https://i.ytimg.com/vi/xoGr1_A8Kk0/hqdefault.jpg"
+                  alt="Vídeo da live tentando achar o Raphael em Baldur's Gate" loading="lazy">
                 <span class="short-badge">Short</span>
                 <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
@@ -615,16 +618,17 @@
               </button>
 
               <div class="short-meta">
-                <h4>LAROYÊ, RAPHAEL</h4><span>Clipe da live:<br><i>Baldur's Gate 3</i></span>
+                <p class="short-title">LAROYÊ, RAPHAEL</p><span>Clipe da live:<br><i>Baldur's Gate 3</i></span>
               </div>
-            </article>
+            </div>
             <!-- Fim vídeo -->
 
             <!-- Início vídeo -->
-            <article class="short-card">
+            <div class="short-card" role="group" aria-roledescription="slide" aria-label="2 de 10">
               <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/oiYyLEhxSwE"
                 aria-label="Reproduzir vídeo: Deck da Meren de uma iniciante no Magic">
-                <img src="https://i.ytimg.com/vi/oiYyLEhxSwE/hqdefault.jpg" alt="" loading="lazy">
+                <img src="https://i.ytimg.com/vi/oiYyLEhxSwE/hqdefault.jpg"
+                  alt="Vídeo sobre meu deck de Magic The Gathering da comandante Meren of Clan Nel Toth" loading="lazy">
                 <span class="short-badge">Short</span>
                 <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
@@ -632,18 +636,19 @@
               </button>
 
               <div class="short-meta">
-                <h4>Deck da Meren de uma iniciante no Magic 💚🖤</h4><span>YouTube<br>Magic: <i>The
+                <p class="short-title">Deck da Meren de uma iniciante no Magic 💚🖤</p><span>YouTube<br>Magic: <i>The
                     Gathering</i></span>
               </div>
-            </article>
+            </div>
             <!-- Fim vídeo -->
 
             <!-- Início vídeo -->
 
-            <article class="short-card">
+            <div class="short-card" role="group" aria-roledescription="slide" aria-label="3 de 10">
               <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/jhUL2KJcs4s"
                 aria-label="Reproduzir vídeo: Será que aceita?">
-                <img src="https://i.ytimg.com/vi/jhUL2KJcs4s/hqdefault.jpg" alt="" loading="lazy">
+                <img src="https://i.ytimg.com/vi/jhUL2KJcs4s/hqdefault.jpg"
+                  alt="Vídeo da live jogando Baldur's Gate 3, ato 3" loading="lazy">
                 <span class="short-badge">Short</span>
                 <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
@@ -651,34 +656,37 @@
               </button>
 
               <div class="short-meta">
-                <h4>Será que aceita?</h4><span>Clipe da live:<br><i>Baldur's Gate 3</i></span>
+                <p class="short-title">Será que aceita?</p><span>Clipe da live:<br><i>Baldur's Gate 3</i></span>
               </div>
-            </article>
+            </div>
 
             <!-- Fim vídeo -->
 
             <!-- Início vídeo -->
-            <article class="short-card">
+            <div class="short-card" role="group" aria-roledescription="slide" aria-label="4 de 10">
               <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/5BSs2KP8oTw"
                 aria-label="Reproduzir vídeo: Wincon: Gostosa demais pra perder.">
-                <img src="https://i.ytimg.com/vi/5BSs2KP8oTw/hqdefault.jpg" alt="" loading="lazy">
+                <img src="https://i.ytimg.com/vi/5BSs2KP8oTw/hqdefault.jpg"
+                  alt="Vídeo da live mostrando meu deck mono black da comandante Liliana, curandeira Herege"
+                  loading="lazy">
                 <span class="short-badge">Short</span>
                 <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg></span>
               </button>
               <div class="short-meta">
-                <h4>Wincon: Gostosa demais pra perder. 💅✨️🫦🥵</h4><span>YouTube<br>Magic: <i>The
+                <p class="short-title">Wincon: Gostosa demais pra perder. 💅✨️🫦🥵</p><span>YouTube<br>Magic: <i>The
                     Gathering</i></span>
               </div>
-            </article>
+            </div>
             <!-- Fim vídeo -->
 
             <!-- Início vídeo -->
-            <article class="short-card">
+            <div class="short-card" role="group" aria-roledescription="slide" aria-label="5 de 10">
               <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/eZMC893IpTQ"
                 aria-label="Reproduzir vídeo: Tutorial: Pegando baús sem lutar: Elemental de lava - Forja Adamantina">
-                <img src="https://i.ytimg.com/vi/eZMC893IpTQ/hqdefault.jpg" alt="" loading="lazy">
+                <img src="https://i.ytimg.com/vi/eZMC893IpTQ/hqdefault.jpg"
+                  alt="Vídeo do tutorial sobre como pegar baús sem lutar no Baldur's Gate 3" loading="lazy">
                 <span class="short-badge">Short</span>
                 <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
@@ -686,54 +694,59 @@
               </button>
 
               <div class="short-meta">
-                <h4>Tutorial: Pegando baús sem lutar: Elemental de lava - Forja Adamantina</h4><span>Tutorial:
+                <p class="short-title">Tutorial: Pegando baús sem lutar: Elemental de lava - Forja Adamantina</p><span>Tutorial:
                   <i>Baldur's Gate 3</i></span>
               </div>
-            </article>
+            </div>
             <!-- Fim vídeo -->
 
             <!-- Início vídeo -->
-            <article class="short-card">
+            <div class="short-card" role="group" aria-roledescription="slide" aria-label="6 de 10">
               <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/IO6650xwtDg"
                 aria-label="Reproduzir vídeo: ratatui pleis in the background">
-                <img src="https://i.ytimg.com/vi/x95igS0xGM0/hqdefault.jpg" alt="" loading="lazy">
+                <img src="https://i.ytimg.com/vi/x95igS0xGM0/hqdefault.jpg"
+                  alt="Vídeo da live mostrando em perspectiva o ângulo de quem joga de rato como mod" loading="lazy">
                 <span class="short-badge">Short</span>
                 <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg></span>
               </button>
               <div class="short-meta">
-                <h4>🗡 🐀 ✨️[ ratatui pleis in the background ]</h4><span>Clipe da live</span>
+                <p class="short-title">🗡 🐀 ✨️[ ratatui pleis in the background ]</p><span>Clipe da live</span>
 
               </div>
 
-            </article>
+            </div>
 
             <!-- Fim vídeo -->
 
             <!-- Início vídeo -->
-            <article class="short-card">
+            <div class="short-card" role="group" aria-roledescription="slide" aria-label="7 de 10">
               <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/N6G1jzVPTSA"
                 aria-label="Reproduzir vídeo: Meu primeiro pré-release da vida! O Hobbit.">
-                <img src="https://i.ytimg.com/vi/N6G1jzVPTSA/hqdefault.jpg" alt="" loading="lazy">
+                <img src="https://i.ytimg.com/vi/N6G1jzVPTSA/hqdefault.jpg"
+                  alt="Vídeo sobre meu primeiro box de pré-release de Magic The Gathering, da coleção do Hobbit."
+                  loading="lazy">
                 <span class="short-badge">Short</span>
                 <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg></span>
               </button>
               <div class="short-meta">
-                <h4>Meu primeiro pré-release da vida! O Hobbit.</h4><span>YouTube<br>Magic: <i>The
+                <p class="short-title">Meu primeiro pré-release da vida! O Hobbit.</p><span>YouTube<br>Magic: <i>The
                     Gathering</i></span>
               </div>
-            </article>
+            </div>
 
             <!-- Fim vídeo -->
 
             <!-- Início vídeo -->
-            <article class="short-card">
+            <div class="short-card" role="group" aria-roledescription="slide" aria-label="8 de 10">
               <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/dhXTmAuVg9Q"
                 aria-label="Reproduzir vídeo: Eu não faço as regras. BORA?">
-                <img src="https://i.ytimg.com/vi/dhXTmAuVg9Q/hqdefault.jpg" alt="" loading="lazy">
+                <img src="https://i.ytimg.com/vi/dhXTmAuVg9Q/hqdefault.jpg"
+                  alt="Trend do Instagram ao som de pagode, onde aparecem várias cartas de Magic The Gathering na mesa e petiscos"
+                  loading="lazy">
                 <span class="short-badge">Short</span>
                 <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
@@ -741,44 +754,48 @@
               </button>
 
               <div class="short-meta">
-                <h4>Eu não faço as regras 🤷‍♀️ 🍻 BORA?</h4><span>Trend das redes sociais.</span>
+                <p class="short-title">Eu não faço as regras 🤷‍♀️ 🍻 BORA?</p><span>Trend das redes sociais.</span>
               </div>
-            </article>
+            </div>
             <!-- Fim vídeo -->
 
             <!-- Início vídeo -->
-            <article class="short-card">
+            <div class="short-card" role="group" aria-roledescription="slide" aria-label="9 de 10">
               <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/dOJX-qU5bcY"
                 aria-label="Reproduzir vídeo: Gráficos de última geração">
-                <img src="https://i.ytimg.com/vi/dOJX-qU5bcY/hqdefault.jpg" alt="" loading="lazy">
+                <img src="https://i.ytimg.com/vi/dOJX-qU5bcY/hqdefault.jpg"
+                  alt="Cortes da live onde dou a entender que a personagem Shadowheart é muito bonita. Ela está com um vestido vermelho não oficial do jogo, feito pela comunidade, e está na praia que nos é apresentada no ato 1, após o tutorial do nautiloide."
+                  loading="lazy">
                 <span class="short-badge">Short</span>
                 <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg></span>
               </button>
               <div class="short-meta">
-                <h4>Gráficos de última geração 🌚</h4><span>Clipe da live</span>
+                <p class="short-title">Gráficos de última geração 🌚</p><span>Clipe da live</span>
 
               </div>
-            </article>
+            </div>
             <!-- Fim vídeo -->
 
             <!-- Início vídeo -->
-            <article class="short-card">
+            <div class="short-card" role="group" aria-roledescription="slide" aria-label="10 de 10">
               <button type="button" class="short-thumb" data-video="https://www.youtube.com/embed/5qetMKXKcWA"
                 aria-label="Reproduzir vídeo: I don't make the rules, now we gotta play.">
-                <img src="https://i.ytimg.com/vi/5qetMKXKcWA/hqdefault.jpg" alt="" loading="lazy">
+                <img src="https://i.ytimg.com/vi/5qetMKXKcWA/hqdefault.jpg"
+                  alt="Trend do Instagram com várias cartas passando ao som da música, convidando amigos a jogar Magic comigo"
+                  loading="lazy">
                 <span class="short-badge">Short</span>
                 <span class="short-play" aria-hidden="true"><svg viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg></span>
               </button>
               <div class="short-meta">
-                <h4>I don't make the rules 🤷‍♀️ now we gotta play</h4><span>Trend das redes sociais<br>Magic:
+                <p class="short-title">I don't make the rules 🤷‍♀️ now we gotta play</p><span>Trend das redes sociais<br>Magic:
                   <i>The
                     Gathering</i></span>
               </div>
-            </article>
+            </div>
             <!-- Fim vídeo -->
 
           </div>
@@ -845,7 +862,8 @@
             </a>
             <a href="https://alessandrabrum.vercel.app/" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24">
-                <path d="M4 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v10H4V5zm2 1v7h12V6H6zM1 17h22v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1z" />
+                <path
+                  d="M4 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v10H4V5zm2 1v7h12V6H6zM1 17h22v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1z" />
               </svg>
               Portfólio
             </a>
@@ -869,7 +887,8 @@
     <div class="social-row footer-links">
       <a href="../estudo-de-caso-brumphomet-lives-ux-showcase/index.html">
         <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v10H4V5zm2 1v7h12V6H6zM1 17h22v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1z" />
+          <path
+            d="M4 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v10H4V5zm2 1v7h12V6H6zM1 17h22v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1z" />
         </svg>
         Versão resumida (UX showcase)
       </a>
